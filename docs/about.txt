@@ -1,20 +1,21 @@
-[ Conceal.Network ]
 
-DECENTRALIZED BANKING, PRIVATE TRANSACTIONS & SECURE MESSAGING
+[ Crumbs is part of The Nibble Network ]
+
+DECENTRALIZED REWARD SYSTEM, PRIVATE TRANSACTIONS & SECURE MESSAGING
 
 
-{ What's Conceal.Network? }
+{ What's Crumbs? }
 
-Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code.
+Crumbs is a decentralized blockchain reward system, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code.
 
-Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous, a key concern in a post Snowden world. Hackers cannot trace money or messages when the messages are sent across public networks.
+Crumbs enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.
 
-Conceal Cryptocurrency (₡CCX) is based on the Cryptonote protocol and runs on a secure peer-to-peer network technology to operate with no central authority. You control the private keys to your funds.
+Crumbs Cryptocurrency (XCR) is based on the Cryptonote protocol and runs on a secure peer-to-peer network technology to operate with no central authority. You control the private keys to your funds.
 
-Conceal is accessible by anyone in the world regardless of their geographic location or status. Our blockchain is resistant to any kind of analysis. All your CCX transactions and messages are anonymous.
+Crumbs is accessible by anyone in the world regardless of their geographic location or status. Our blockchain is resistant to any kind of analysis. All your XCR transactions and messages are anonymous.
 
-Conceal avoids many concerns, e.g. technological, environment impact, reputational and security, of Bitcoin, and provides a glimpse of the future.
+Crumbs avoids many concerns, e.g. technological, environment impact, reputational and security, of Bitcoin, and provides a glimpse of the future.
 
-Conceal is open-source, community driven and truly decentralized.
+Crumbs is open-source, community driven and truly decentralized.
 
-No one owns Conceal, everyone can take part.
+No one owns Crumbs, everyone can take part.
