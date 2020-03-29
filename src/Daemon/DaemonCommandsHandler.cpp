@@ -273,7 +273,7 @@ bool DaemonCommandsHandler::print_stat(const std::vector<std::string>& args) {
   std::cout << "Block height: " << height << std::endl;
   std::cout << "Block difficulty: " << m_core.difficultyAtHeight(height) << std::endl;
   std::cout << "Total coins in network:  " << currency.formatAmount(totalCoinsInNetwork) << std::endl;
-  std::cout << "Total coins banked: " << currency.formatAmount(totalCoinsOnDeposits) <<
+  std::cout << "Total coins held for rewards: " << currency.formatAmount(totalCoinsOnDeposits) <<
     " (" << currency.formatAmount(calculatePercent(currency, totalCoinsOnDeposits, totalCoinsInNetwork)) << "%)" << std::endl;
   std::cout << "Amount of active coins:  " << currency.formatAmount(amountOfActiveCoins) <<
     " (" << currency.formatAmount(calculatePercent(currency, amountOfActiveCoins, totalCoinsInNetwork)) << "%)" << std::endl;

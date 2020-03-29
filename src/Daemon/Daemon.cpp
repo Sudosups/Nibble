@@ -131,21 +131,21 @@ JsonValue buildLoggerConfiguration(Level level, const std::string& logfile) {
 }
 
 void renameDataDir() {
-  std::string concealXDir = Tools::getDefaultDataDirectory();
-  boost::filesystem::path concealXDirPath(concealXDir);
-  if (boost::filesystem::exists(concealXDirPath)) {
+  std::string crumbsXDir = Tools::getDefaultDataDirectory();
+  boost::filesystem::path crumbsXDirPath(crumbsXDir);
+  if (boost::filesystem::exists(crumbsXDirPath)) {
     return;
   }
 
-  std::string dataDirPrefix = concealXDir.substr(0, concealXDir.size() + 1 - sizeof(CRYPTONOTE_NAME));
+  std::string dataDirPrefix = crumbsXDir.substr(0, crumbsXDir.size() + 1 - sizeof(CRYPTONOTE_NAME));
   boost::filesystem::path cediDirPath(dataDirPrefix + "BXC");
 
   if (boost::filesystem::exists(cediDirPath)) {
-    boost::filesystem::rename(cediDirPath, concealXDirPath);
+    boost::filesystem::rename(cediDirPath, crumbsXDirPath);
   } else {
     boost::filesystem::path BcediDirPath(dataDirPrefix + "Bcedi");
     if (boost::filesystem::exists(boost::filesystem::path(BcediDirPath))) {
-		boost::filesystem::rename(BcediDirPath, concealXDirPath);
+		boost::filesystem::rename(BcediDirPath, crumbsXDirPath);
     }
   }
 }

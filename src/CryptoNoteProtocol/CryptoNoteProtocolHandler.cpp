@@ -656,43 +656,21 @@ bool CryptoNoteProtocolHandler::on_connection_synchronized()
   if (m_synchronized.compare_exchange_strong(val_expected, true))
   {
     logger(Logging::INFO) << ENDL << "********************************************************************************" << ENDL
-                          << "  " << ENDL
-                          << "                                      .//.                                      " << ENDL
-                          << "                                  ./((((((((,                                   " << ENDL
-                          << "                              .*((((((((((((((((.                               " << ENDL
-                          << "                           *(((((((((*.**.*((((((((/.                           " << ENDL
-                          << "                        /((((((((/.%@@@//(((/.*((((((((,                        " << ENDL
-                          << "                       %@*.((/.#@@@@@@@//(((((((/./(.*(/                        " << ENDL
-                          << "                       %@@@/#@@@@@@@%.    ./(((((((,(((/                        " << ENDL
-                          << "                       %@@@/#@@@@,             *(((,((*                         " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/#@@@@,                                              " << ENDL
-                          << "                       %@@@/(@@@@,              .&@@%.                          " << ENDL
-                          << "                       %@@@/(/.(@@@*        ,&@@@@@@@%..                        " << ENDL
-                          << "                       %@@@@,*@@@@@@@@@,*@@@@@@@@%..(((*                        " << ENDL
-                          << "                       %@@@@@@@&.,@@@@@@@@@@@%..(((((((*                        " << ENDL
-                          << "                          ,@@@@@@@@&.,&@@&..((((((((*                           " << ENDL
-                          << "                              /@@@@@@@@,*(((((((/.                              " << ENDL
-                          << "                                  (@@@@**((((.                                  " << ENDL
-                          << "                                     .#***                                      " << ENDL
-                          << "  " << ENDL
-                          << "You are now synchronized with the Conceal network. You may now start concealwallet." << ENDL
-                          << "Please note, that the blockchain will be saved only after you quit the daemon" << ENDL
-                          << "with the \"exit\" command or if you use the \"save\" command." << ENDL
-                          << "Otherwise, you will possibly need to synchronize the blockchain again." << ENDL
-                          << "Use \"help\" command to see the list of available commands." << ENDL
-                          << "********************************************************************************";
+      << "  " << ENDL
+      << " ::::::::  :::::::::  :::    ::: ::::    ::::  :::::::::   :::::::: " << ENDL
+      << ":+:    :+: :+:    :+: :+:    :+: +:+:+: :+:+:+ :+:    :+: :+:    :+:        " << ENDL
+      << "+:+        +:+    +:+ +:+    +:+ +:+ +:+:+ +:+ +:+    +:+ +:+        " << ENDL
+      << "+#+        +#++:++#:  +#+    +:+ +#+  +:+  +#+ +#++:++#+  +#++:++#++        " << ENDL
+      << "+#+        +#+    +#+ +#+    +#+ +#+       +#+ +#+    +#+        +#+        " << ENDL
+      << "#+#    #+# #+#    #+# #+#    #+# #+#       #+# #+#    #+# #+#    #+#        " << ENDL
+      << " ########  ###    ###  ########  ###       ### #########   ########        " << ENDL
+      << "  " << ENDL
+      << "You are now synchronized with The Nibble Network. You may now start crumbswallet." << ENDL
+      << "Please note, that the blockchain will be saved only after you quit the daemon" << ENDL
+      << "with the \"exit\" command or if you use the \"save\" command." << ENDL
+      << "Otherwise, you will possibly need to synchronize the blockchain again." << ENDL
+      << "Use \"help\" command to see the list of available commands." << ENDL
+      << "********************************************************************************";
     m_core.on_synchronized();
 
     uint32_t height;
