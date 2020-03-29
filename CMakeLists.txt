@@ -17,7 +17,7 @@ enable_testing()
 # copy CTestCustom.cmake to build dir to disable long running tests in 'make test'
 configure_file(${CMAKE_SOURCE_DIR}/CTestCustom.cmake ${CMAKE_BINARY_DIR})
 
-project(concealX)
+project(crumbsX)
 
 include_directories(include src external "${CMAKE_BINARY_DIR}/version")
 if(APPLE)
@@ -54,7 +54,7 @@ else()
   if("${ARCH}" STREQUAL "default")
     set(ARCH_FLAG "")
   else()
-    set(ARCH_FLAG "-march=x86-64")
+    set(ARCH_FLAG "-march=${ARCH}")
   endif()
   set(WARNINGS "-Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Wno-error=extra -Wno-error=unused-function -Wno-error=deprecated-declarations -Wno-error=sign-compare -Wno-error=strict-aliasing -Wno-error=type-limits -Wno-unused-parameter -Wno-error=unused-variable -Wno-error=undef -Wno-error=uninitialized -Wno-error=unused-result")
   if(CMAKE_C_COMPILER_ID STREQUAL "Clang")
@@ -87,7 +87,7 @@ else()
   else()
     set(DEBUG_FLAGS "-g3 -O0")
   endif()
-  set(RELEASE_FLAGS "-g3 -O0")
+  set(RELEASE_FLAGS "-DNDEBUG")
   
 endif()
 
