@@ -657,15 +657,16 @@ bool CryptoNoteProtocolHandler::on_connection_synchronized()
   {
     logger(Logging::INFO) << ENDL << "********************************************************************************" << ENDL
       << "  " << ENDL
-      << " ::::::::  :::::::::  :::    ::: ::::    ::::  :::::::::   :::::::: " << ENDL
-      << ":+:    :+: :+:    :+: :+:    :+: +:+:+: :+:+:+ :+:    :+: :+:    :+:        " << ENDL
-      << "+:+        +:+    +:+ +:+    +:+ +:+ +:+:+ +:+ +:+    +:+ +:+        " << ENDL
-      << "+#+        +#++:++#:  +#+    +:+ +#+  +:+  +#+ +#++:++#+  +#++:++#++        " << ENDL
-      << "+#+        +#+    +#+ +#+    +#+ +#+       +#+ +#+    +#+        +#+        " << ENDL
-      << "#+#    #+# #+#    #+# #+#    #+# #+#       #+# #+#    #+# #+#    #+#        " << ENDL
-      << " ########  ###    ###  ########  ###       ### #########   ########        " << ENDL
+      << "    _   ___ __    __    __ " << ENDL
+      << "   / | / (_) /_  / /_  / /" << ENDL
+      << "  /  |/ / / __ \/ __ \/ / _ \ " << ENDL
+      << " / /|  / / /_/ / /_/ / /  __/" << ENDL
+      << "/_/ |_/_/_.___/_.___/_/\___/ " << ENDL
       << "  " << ENDL
-      << "You are now synchronized with The Nibble Network. You may now start crumbswallet." << ENDL
+      << "  " << ENDL
+      << "  " << ENDL
+      << "You are now synchronized with The Nibble Network. You may now start your nibble wallet." << ENDL
+      << "Open a new terminal and use ./nibblewallet" << ENDL
       << "Please note, that the blockchain will be saved only after you quit the daemon" << ENDL
       << "with the \"exit\" command or if you use the \"save\" command." << ENDL
       << "Otherwise, you will possibly need to synchronize the blockchain again." << ENDL
