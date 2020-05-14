@@ -21,11 +21,11 @@ jobs:
         run: |
           $build_folder = "build"
           $ccx_ver = "${{ github.ref }}" -replace 'refs/tags/'
-          $release_name = "ccx-cli-win64-v$ccx_ver"
+          $release_name = "nibble-cli-win64-v$ccx_ver"
           mkdir "$build_folder"
           cd "$build_folder"
           cmake -G "Visual Studio 16 2019" -A x64 ..
-          msbuild concealX.sln /p:Configuration=Release /m
+          msbuild nibbleX.sln /p:Configuration=Release /m
           cd src\Release
           Compress-Archive -Path *.exe -DestinationPath "$release_name.zip"
           $sha256 = (Get-FileHash "$release_name.zip").Hash
@@ -39,7 +39,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ steps.build.outputs.asset_path }}
-          name: Conceal Core CLI v${{ steps.build.outputs.ccx_ver }}
+          name: Nibble Core CLI v${{ steps.build.outputs.nibble_ver }}
           body: |
             **${{ steps.build.outputs.release_name }}**
             ${{ steps.build.outputs.sha256 }}
