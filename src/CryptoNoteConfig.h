@@ -16,7 +16,7 @@ namespace parameters {
 const uint64_t CRYPTONOTE_MAX_BLOCK_NUMBER = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 17588; /* XCR address prefix */
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 17588; /* NBXC address prefix */
 const size_t   CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW = 10; /* 20 minutes */
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT = 60 * 60 * 2; /* two hours */
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V1 = 360; /* changed for LWMA3 */
@@ -38,11 +38,11 @@ const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT = 6;
 
 const uint64_t POINT = UINT64_C(1000); 
 const uint64_t COIN = UINT64_C(1000000); /* smallest atomic unit */
-const uint64_t MINIMUM_FEE = UINT64_C(10); /* 0.000010 XCR */
-const uint64_t MINIMUM_FEE_V1 = UINT64_C(100); /* 0.000100 XCR */
-const uint64_t MINIMUM_FEE_V2 = UINT64_C(1000); /* 0.001000 XCR */
-const uint64_t MINIMUM_FEE_BANKING = UINT64_C(1000); /* 0.001000 XCR */
-const uint64_t DEFAULT_DUST_THRESHOLD = UINT64_C(10); /* 0.000010 XCR */  
+const uint64_t MINIMUM_FEE = UINT64_C(10); /* 0.000010 NBXC */
+const uint64_t MINIMUM_FEE_V1 = UINT64_C(100); /* 0.000100 NBXC */
+const uint64_t MINIMUM_FEE_V2 = UINT64_C(1000); /* 0.001000 NBXC */
+const uint64_t MINIMUM_FEE_BANKING = UINT64_C(1000); /* 0.001000 NBXC */
+const uint64_t DEFAULT_DUST_THRESHOLD = UINT64_C(10); /* 0.000010 NBXC */  
 
 const uint64_t DIFFICULTY_TARGET = 120; /* two minutes */
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY = 24 * 60 * 60 / DIFFICULTY_TARGET; /* 720 blocks */
@@ -123,9 +123,9 @@ const char     MINER_CONFIG_FILE_NAME[]                       = "miner_conf.json
 const uint64_t START_BLOCK_REWARD = (UINT64_C(5000) * parameters::POINT); // start reward (Consensus I)
 const uint64_t FOUNDATION_TRUST = (UINT64_C(2000000) * parameters::COIN); // funds to secure network  (Consensus II)
 const uint64_t MAX_BLOCK_REWARD = (UINT64_C(7) * parameters::COIN); // max reward (Consensus I)
-const uint64_t REWARD_INCREASE_INTERVAL = (UINT64_C(21900)); // aprox. 1 month (+ 0.25 XCR increment per month)
+const uint64_t REWARD_INCREASE_INTERVAL = (UINT64_C(21900)); // aprox. 1 month (+ 0.25 NBXC increment per month)
 
-const char     CRYPTONOTE_NAME[] = "crumbs";
+const char     CRYPTONOTE_NAME[] = "nibble";
 const char     GENESIS_COINBASE_TX_HEX[] = "010a01ff0001c096b102029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101b01f2b54425ed94515d32a47311858653d281b30a64fc5199dcf7bc7097a4c40";
 const uint32_t GENESIS_NONCE = 10000;
 const uint64_t GENESIS_TIMESTAMP = 1581120000;
