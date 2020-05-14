@@ -1,14 +1,15 @@
-# Crumbs Core (CLI)
-Latest Release: v3.0.0
+# Nibble Core (CLI)
+Latest Release: v4.0.0
 Maintained by The Nibble Developers
 
 ## Information
-Crumbs is a based on the Conceal Network project. Crumbs is a decentralized reward platform with encrypted messages and own privacy protected cryptocurrency.
-What's a crumb? A nibble is half a byte or 4 bits. A crumb is half a nibble, or 2 bits.
+Nibble is based on the Conceal Network project. Nibble is a decentralized reward platform with encrypted messages and own privacy protected cryptocurrency.
 
-Crumbs is part of The Nibble Network and is accessible by anyone in the world regardless of his/her geographic location or status. All your XCR transactions and messages are anonymous. The Nibble Network provides an instant secure, untraceable and unlinkable way of encrypted communication - crypto messages.
+All your NBXC transactions and messages are anonymous. The Nibble Network provides an instant secure, untraceable and unlinkable way of encrypted communication - crypto messages.
 
-Crumbs is open-source, community driven and truly decentralized. No one owns it, everyone can take part.
+Nibble is open-source, always has been and always will be. 
+This latest edition of Nibble, has been created from a merger of projects - Nibble Classic & Crumbs
+Giving our users the best from both worlds, a simple to use platform, messaging ability, deposits & rewards.
 
 ## Resources
 - Web: https://nibble-nibble.com
@@ -18,19 +19,19 @@ Crumbs is open-source, community driven and truly decentralized. No one owns it,
 - Bitcoin Talk: 
 - Paperwallet: 
 
-## Compiling Crumbs from source
+## Compiling Nibble from source
 
 ### Linux / Ubuntu
 
 ##### Prerequisites
 
-- You will need the following dependencies to build the Crumbs CLI: boost, cmake, git, gcc, g++, python, and make.
+- You will need the following dependencies to build the Nibble CLI: boost, cmake, git, gcc, g++, python, and make.
 - On Ubuntu: `sudo apt-get install -y build-essential python-dev gcc g++ git cmake libboost-all-dev`
 
 #### Building
 
-- `git clone https://github.com/nibbleclassic/crumbs`
-- `cd crumbs-core`
+- `git clone https://github.com/nibbleclassic/nibble`
+- `cd nibble-core`
 - `mkdir build && cd $_`
 - `cmake ..`
 - `make`
@@ -51,12 +52,12 @@ If the build is successful the binaries will be in the src folder.
 
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2019' or run "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsMSBuildCmd.bat" from any command prompt.
 
-- `git clone https://github.com/nibbleclassic/crumbs`
-- `cd crumbs-core`
+- `git clone https://github.com/nibbleclassic/nibble`
+- `cd nibble-core`
 - `mkdir build`
 - `cd build`
 - `cmake -G "Visual Studio 16 2017" -A x64 -DBOOST_LIBRARYDIR="c:\local\boost_1_70_0\lib64-msvc-14.2 ..` (Or your boost installed dir.)
-- `msbuild crumbsX.sln /p:Configuration=Release /m`
+- `msbuild nibbleX.sln /p:Configuration=Release /m`
 
 If the build is successful the binaries will be in the src/Release folder.
 
@@ -79,11 +80,11 @@ After that, proceed with installing dependencies:
 $ brew install git python cmake gcc boost
 ```
 
-When all dependencies are installed, build Crumbs Core binaries:
+When all dependencies are installed, build nibble Core binaries:
 
 ```bash
-$ `git clone https://github.com/nibbleclassic/crumbs`
-$ `cd crumbs-core`
+$ `git clone https://github.com/nibbleclassic/nibble`
+$ `cd nibble-core`
 $ mkdir build && cd $_
 $ cmake ..
 $ make
