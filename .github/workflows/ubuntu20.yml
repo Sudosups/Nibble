@@ -2,8 +2,7 @@ name: Ubuntu 20.04
 
 on:
   push:
-    tags:
-    - v1
+    branches: master
 
 jobs:
   build-ubuntu20:
