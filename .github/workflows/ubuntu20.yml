@@ -3,6 +3,7 @@ name: Ubuntu 20.04
 on:
   push:
     branches: master
+    tags: '*'
 
 jobs:
   build-ubuntu20:
