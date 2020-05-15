@@ -3,7 +3,7 @@ name: macOS
 on:
   push:
     tags:
-    - '*'
+    - v1
 
 jobs:
   build-macos:
