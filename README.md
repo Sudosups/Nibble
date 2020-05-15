@@ -7,7 +7,7 @@ Maintained by The Nibble Developers
 ## Information
 Nibble is based on the Conceal Network project. Nibble is a decentralized reward platform with encrypted messages and own privacy protected cryptocurrency.
 
-All your XCR transactions and messages are anonymous. The Nibble Network provides an instant secure, untraceable and unlinkable way of encrypted communication - crypto messages.
+All your NBXC transactions and messages are anonymous. The Nibble Network provides an instant secure, untraceable and unlinkable way of encrypted communication - crypto messages.
 
 Nibble is open-source, always has been and always will be. 
 This latest edition of Nibble, has been created from a merger of projects - Nibble Classic & Crumbs
