@@ -13,7 +13,7 @@ Giving our users the best from both worlds, a simple to use platform, messaging 
 
 ## Resources
 - Web: https://nibble-nibble.com
-- GitHub: 
+- GitHub: https://github.com/Nibble-Network/Nibble
 - Discord: 
 - Twitter: 
 - Bitcoin Talk: 
@@ -30,7 +30,7 @@ Giving our users the best from both worlds, a simple to use platform, messaging 
 
 #### Building
 
-- `git clone https://github.com/nibbleclassic/nibble`
+- `git clone https://github.com/Nibble-Network/Nibble`
 - `cd nibble-core`
 - `mkdir build && cd $_`
 - `cmake ..`
@@ -52,7 +52,7 @@ If the build is successful the binaries will be in the src folder.
 
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2019' or run "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsMSBuildCmd.bat" from any command prompt.
 
-- `git clone https://github.com/nibbleclassic/nibble`
+- `git clone https://github.com/Nibble-Network/Nibble`
 - `cd nibble-core`
 - `mkdir build`
 - `cd build`
@@ -83,7 +83,7 @@ $ brew install git python cmake gcc boost
 When all dependencies are installed, build nibble Core binaries:
 
 ```bash
-$ `git clone https://github.com/nibbleclassic/nibble`
+$ `git clone https://github.com/Nibble-Network/Nibble`
 $ `cd nibble-core`
 $ mkdir build && cd $_
 $ cmake ..
