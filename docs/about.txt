@@ -10,9 +10,9 @@ Nibble is a decentralized blockchain reward system, with deposits and investment
 
 Nibble enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.
 
-Nibble Cryptocurrency (XCR) is based on the Cryptonote protocol and runs on a secure peer-to-peer network technology to operate with no central authority. You control the private keys to your funds.
+Nibble Cryptocurrency (NBXC) is based on the Cryptonote protocol and runs on a secure peer-to-peer network technology to operate with no central authority. You control the private keys to your funds.
 
-Nibble is accessible by anyone in the world regardless of their geographic location or status. Our blockchain is resistant to any kind of analysis. All your XCR transactions and messages are anonymous.
+Nibble is accessible by anyone in the world regardless of their geographic location or status. Our blockchain is resistant to any kind of analysis. All your NBXC transactions and messages are anonymous.
 
 Nibble avoids many concerns, e.g. technological, environment impact, reputational and security, of Bitcoin, and provides a glimpse of the future.
 
