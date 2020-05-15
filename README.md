@@ -2,7 +2,7 @@
 Latest Release: v4.0.0
 Maintained by The Nibble Developers
 
-![Ubuntu 16.04](https://github.com/Sudosups/Nibble/workflows/Ubuntu%2016.04/badge.svg?branch=master)
+![Ubuntu 16.04](https://github.com/Sudosups/Nibble/workflows/Ubuntu%2016.04/badge.svg)
 
 ## Information
 Nibble is based on the Conceal Network project. Nibble is a decentralized reward platform with encrypted messages and own privacy protected cryptocurrency.
