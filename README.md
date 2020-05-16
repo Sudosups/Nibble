@@ -32,7 +32,7 @@ Giving our users the best from both worlds, a simple to use platform, messaging 
 #### Building
 
 - `git clone https://github.com/Nibble-Network/Nibble`
-- `cd nibble-core`
+- `cd Nibble`
 - `mkdir build && cd $_`
 - `cmake ..`
 - `make`
@@ -54,7 +54,7 @@ If the build is successful the binaries will be in the src folder.
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2019' or run "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsMSBuildCmd.bat" from any command prompt.
 
 - `git clone https://github.com/Nibble-Network/Nibble`
-- `cd nibble-core`
+- `cd Nibble`
 - `mkdir build`
 - `cd build`
 - `cmake -G "Visual Studio 16 2017" -A x64 -DBOOST_LIBRARYDIR="c:\local\boost_1_70_0\lib64-msvc-14.2 ..` (Or your boost installed dir.)
@@ -85,7 +85,7 @@ When all dependencies are installed, build nibble Core binaries:
 
 ```bash
 $ `git clone https://github.com/Nibble-Network/Nibble`
-$ `cd nibble-core`
+$ `cd Nibble`
 $ mkdir build && cd $_
 $ cmake ..
 $ make
