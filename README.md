@@ -16,9 +16,9 @@ Giving our users the best from both worlds, a simple to use platform, messaging 
 - Web: https://nibble-nibble.com
 - GitHub: https://github.com/Nibble-Network/Nibble
 - Discord: 
-- Twitter: 
+- Twitter: https://twitter.com/NibbleNetwork
 - Bitcoin Talk: 
-- Paperwallet: 
+
 
 ## Compiling Nibble from source
 
