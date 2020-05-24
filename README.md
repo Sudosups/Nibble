@@ -1,5 +1,8 @@
 # Nibble Core (CLI)
 Latest Release: v4.0.0
+
+![image](https://i.imgur.com/oJFun3j.png)
+
 Maintained by The Nibble Developers
 
 
