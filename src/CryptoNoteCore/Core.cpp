@@ -533,6 +533,7 @@ void core::getPoolChanges(const std::vector<Crypto::Hash>& knownTxsIds, std::vec
 }
 
 bool core::handle_incoming_block_blob(const BinaryArray& block_blob, block_verification_context& bvc, bool control_miner, bool relay_block) {
+	logger(INFO) << "<< Core.cpp << " << "Processing submitted block";
   if (block_blob.size() > m_currency.maxBlockBlobSize()) {
     logger(INFO) << "<< Core.cpp << " << "WRONG BLOCK BLOB, too big size " << block_blob.size() << "<< Core.cpp << " << ", rejected";
     bvc.m_verification_failed = true;
