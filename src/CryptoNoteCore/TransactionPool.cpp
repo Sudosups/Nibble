@@ -389,15 +389,21 @@ namespace CryptoNote {
 
     BlockTemplate blockTemplate;
 
-    for (auto it = m_fee_index.begin(); it != m_fee_index.end() && it->fee == 1000; ++it) 
+    for (auto it = m_fee_index.begin(); it != m_fee_index.end(); ++it) 
     {
       const auto& txd = *it;
-      logger(INFO) << "Processing tx for inclusion in block template " << txd.id << "with fee " << txd.fee;
-
+      
       if (m_ttlIndex.count(txd.id) > 0) 
       {
         continue;
       }
+
+            if (txd.fee != 1000) 
+      {
+        continue;
+      }
+      
+      logger(INFO) << "Processing tx for inclusion in block template " << txd.id << "with fee " << txd.fee;
 
       size_t blockSizeLimit = (txd.fee == 0) ? median_size : max_total_size;
       if (blockSizeLimit < total_size + txd.blobSize) 
@@ -541,6 +547,24 @@ namespace CryptoNote {
 
         auto ttlIt = m_ttlIndex.find(it->id);
         bool ttlExpired = (ttlIt != m_ttlIndex.end() && ttlIt->second <= now);
+
+                if (it->fee != 1000) {
+          logger(INFO) << "<< TransactionPool.cpp << "
+                        << "Tx " << it->id << " removed from tx pool due to incorred fee : " << it->fee;
+          m_recentlyDeletedTransactions.emplace(it->id, now);
+          it = removeTransaction(it);
+          somethingRemoved = true;
+        }
+
+        //if we here, transaction seems valid, but, anyway, check for key_images collisions with blockchain, just to be sure
+        if (m_validator.haveSpentKeyImages(it->tx))
+        {
+          m_recentlyDeletedTransactions.emplace(it->id, now);
+          it = removeTransaction(it);
+          somethingRemoved = true;
+          logger(INFO) << "<< TransactionPool.cpp << "
+                       << "Tx " << it->id << " removed from tx pool using spent key images";
+        }
 
         if (remove || ttlExpired) {
           if (ttlExpired) {
