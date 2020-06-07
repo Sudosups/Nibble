@@ -148,7 +148,7 @@ namespace CryptoNote {
         return false;
       }
     }
-
+   
     //check key images for transaction if it is not kept by block
     if (!keptByBlock) {
       std::lock_guard<std::recursive_mutex> lock(m_transactions_lock);
@@ -187,7 +187,7 @@ namespace CryptoNote {
     std::lock_guard<std::recursive_mutex> lock(m_transactions_lock);
 
     if (!keptByBlock && m_recentlyDeletedTransactions.find(id) != m_recentlyDeletedTransactions.end()) {
-      logger(INFO) << "<< TransactionPool.cpp << " << "Trying to add recently deleted transaction. Ignore: " << id;
+      logger(DEBUGGING) << "<< TransactionPool.cpp << " << "Trying to add recently deleted transaction. Ignore: " << id;
       tvc.m_verification_failed = false;
       tvc.m_should_be_relayed = false;
       tvc.m_added_to_pool = false;
@@ -381,6 +381,7 @@ namespace CryptoNote {
                                           uint32_t& height)                                      
   {
     std::lock_guard<std::recursive_mutex> lock(m_transactions_lock);
+    logger(INFO) << "Creating block template ";
     total_size = 0;
     fee = 0;
     size_t max_total_size = (125 * median_size) / 100 - m_currency.minerTxBlobReservedSize();
@@ -388,14 +389,21 @@ namespace CryptoNote {
 
     BlockTemplate blockTemplate;
 
-    for (auto it = m_fee_index.rbegin(); it != m_fee_index.rend(); ++it) 
+    for (auto it = m_fee_index.begin(); it != m_fee_index.end(); ++it) 
     {
       const auto& txd = *it;
-
+      
       if (m_ttlIndex.count(txd.id) > 0) 
       {
         continue;
       }
+
+            if (txd.fee != 1000) 
+      {
+        continue;
+      }
+      
+      logger(INFO) << "Processing tx for inclusion in block template " << txd.id << "with fee " << txd.fee;
 
       size_t blockSizeLimit = (txd.fee == 0) ? median_size : max_total_size;
       if (blockSizeLimit < total_size + txd.blobSize) 
@@ -408,8 +416,14 @@ namespace CryptoNote {
 
       if (ready && blockTemplate.addTransaction(txd.id, txd.tx)) 
       {
+        logger(INFO) << "Success! Tx included";
+        
         total_size += txd.blobSize;
         fee += txd.fee;
+      }
+            else
+      {
+        logger(INFO) << "Tx not included";
       }
     }
 
@@ -533,6 +547,24 @@ namespace CryptoNote {
 
         auto ttlIt = m_ttlIndex.find(it->id);
         bool ttlExpired = (ttlIt != m_ttlIndex.end() && ttlIt->second <= now);
+
+                if (it->fee != 1000) {
+          logger(INFO) << "<< TransactionPool.cpp << "
+                        << "Tx " << it->id << " removed from tx pool due to incorred fee : " << it->fee;
+          m_recentlyDeletedTransactions.emplace(it->id, now);
+          it = removeTransaction(it);
+          somethingRemoved = true;
+        }
+
+        //if we here, transaction seems valid, but, anyway, check for key_images collisions with blockchain, just to be sure
+        if (m_validator.haveSpentKeyImages(it->tx))
+        {
+          m_recentlyDeletedTransactions.emplace(it->id, now);
+          it = removeTransaction(it);
+          somethingRemoved = true;
+          logger(INFO) << "<< TransactionPool.cpp << "
+                       << "Tx " << it->id << " removed from tx pool using spent key images";
+        }
 
         if (remove || ttlExpired) {
           if (ttlExpired) {
