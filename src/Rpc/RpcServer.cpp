@@ -846,7 +846,8 @@ bool RpcServer::f_on_blocks_list_json(const F_COMMAND_RPC_GET_BLOCKS_LIST::reque
   return true;
 }
 
-bool RpcServer::f_on_block_json(const F_COMMAND_RPC_GET_BLOCK_DETAILS::request& req, F_COMMAND_RPC_GET_BLOCK_DETAILS::response& res) {
+bool RpcServer::f_on_block_json(const F_COMMAND_RPC_GET_BLOCK_DETAILS::request &req, F_COMMAND_RPC_GET_BLOCK_DETAILS::response &res) 
+{
   Hash hash;
 
   if (!parse_hash256(req.hash, hash)) {
@@ -856,6 +857,7 @@ bool RpcServer::f_on_block_json(const F_COMMAND_RPC_GET_BLOCK_DETAILS::request& 
   }
 
   Block blk;
+  
   if (!m_core.getBlockByHash(hash, blk)) {
     throw JsonRpc::JsonRpcError{
       CORE_RPC_ERROR_CODE_INTERNAL_ERROR,
@@ -869,18 +871,23 @@ bool RpcServer::f_on_block_json(const F_COMMAND_RPC_GET_BLOCK_DETAILS::request& 
   }
 
   block_header_response block_header;
-  res.block.height = boost::get<BaseInput>(blk.baseTransaction.inputs.front()).blockIndex;
-  fill_block_header_response(blk, false, res.block.height, hash, block_header);
 
+  res.block.height = boost::get<BaseInput>(blk.baseTransaction.inputs.front()).blockIndex;
+  fill_block_header_response(blk, false, res.block.height, hash, block_header); // fill up block_header data 
+  
   res.block.major_version = block_header.major_version;
   res.block.minor_version = block_header.minor_version;
   res.block.timestamp = block_header.timestamp;
   res.block.prev_hash = block_header.prev_hash;
   res.block.nonce = block_header.nonce;
-  res.block.hash = Common::podToHex(hash);
-  res.block.depth = m_core.get_current_blockchain_height() - res.block.height - 1;
-  m_core.getBlockDifficulty(static_cast<uint32_t>(res.block.height), res.block.difficulty);
+  res.block.orphan_status = block_header.orphan_status; //Mad this is no good ? move data from fill up to var res. 
+  //res.block.hash = Common::podToHex(hash);
+  res.block.hash =  block_header.hash; 
+  //res.block.depth = m_core.get_current_blockchain_height() - res.block.height - 1;
+  res.block.depth =  block_header.depth;
 
+  // m_core.getBlockDifficulty(static_cast<uint32_t>(res.block.height), res.block.difficulty);
+  res.block.difficulty = block_header.difficulty;
   res.block.reward = block_header.reward;
 
   std::vector<size_t> blocksSizes;
@@ -1227,8 +1234,8 @@ namespace {
     return reward;
   }
 }
-
-void RpcServer::fill_block_header_response(const Block& blk, bool orphan_status, uint64_t height, const Hash& hash, block_header_response& responce) {
+//Mad : look not working
+void RpcServer::fill_block_header_response(const Block &blk, bool orphan_status, uint64_t height, const Hash& hash, block_header_response &responce) {
   responce.major_version = blk.majorVersion;
   responce.minor_version = blk.minorVersion;
   responce.timestamp = blk.timestamp;
@@ -1239,7 +1246,7 @@ void RpcServer::fill_block_header_response(const Block& blk, bool orphan_status,
   responce.deposits = m_core.depositAmountAtHeight(height);
   responce.depth = m_core.get_current_blockchain_height() - height - 1;
   responce.hash = Common::podToHex(hash);
-  m_core.getBlockDifficulty(static_cast<uint32_t>(height), responce.difficulty);
+  m_core.getBlockDifficulty(static_cast<uint32_t>(height), responce.difficulty); //write data into responce.difficulty ?
   responce.reward = get_block_reward(blk);
 }
 
